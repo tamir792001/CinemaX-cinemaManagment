@@ -1,0 +1,140 @@
+/*reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+body {
+    color: white;
+    background-color: hsl(243, 15%, 23%);
+    background-image: url("../pics/movieswallpaper.jpg"); 
+}
+
+/* layout for the whole app*/
+.container{
+    width: 80%;
+    margin: 0 auto;
+    background-color: hsl(243, 15%, 23%);
+    min-height:100vh;
+}
+
+/* layout for PageLayout.js*/
+.container.screen {
+    /*border: red 2px solid;*/
+    width: 100%;
+    min-height: 0;
+    text-align: center;
+}
+
+/* layout for organize movies, members, and users*/
+.box {
+    display: flex;
+    width:100%;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    height:100vh;
+    overflow-y: scroll;
+    justify-content: center;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.box.home {
+  overflow-y: hidden; 
+  height: auto;
+  padding-top: 3rem;
+}
+
+
+/*makes sure the y-axis scrollbar is invisible*/
+.box::-webkit-scrollbar {
+    display: none;
+  }
+
+/*layout for a movie, member and forms*/  
+.card {
+    background-color: hsl(221, 35%, 14%);
+    padding:1rem;
+    width:100%;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgb(2, 0, 19) ;
+}
+ /*layout for SubcribeToMovie Comp*/
+.card.subscription{
+    background-color: hsl(0, 0%, 100%); 
+    color:black
+}
+
+/*layout for a user*/
+.card.user{
+    width: 500px;
+    text-align: left;
+    min-height: 200px;
+    margin: 10px ;
+}
+
+/*setting all the text fields background color to white*/
+.textfields {
+    background-color: white;
+}
+
+li{
+    list-style-type: none;
+}
+
+.loginandregister{
+    display: flex;
+    width: 500px;
+    flex-wrap: wrap;
+    border-radius: 0.25rem;
+    justify-content: space-around;
+    box-shadow: 0 5px 5px hsl(0, 0%, 0%);
+    background-color: hsl(221, 35%, 14%);
+    margin-top: 1rem;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    background-color: hsl(323, 100%, 42%);
+    width: 100%;
+    box-shadow: 0 5px 5px hsl(0, 0%, 0%);
+    height: 2.5rem;
+    justify-content: space-between;
+}
+
+.navbar-btns{
+    display: flex;
+}
+
+ul.no-bullets {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+  }
+
+.maincontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.logincontainer{
+    margin: auto;
+    width: 50%;
+    text-align: center;
+
+}
+
+@media (max-width: 690px){
+    .navbar{
+        flex-direction: column;
+        height: auto;
+    }
+    .navbar-btns{
+        flex-direction: column;
+    }
+}
