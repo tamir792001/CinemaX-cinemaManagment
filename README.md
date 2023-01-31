@@ -14,7 +14,7 @@ From that point, depending on the user premissions we can:
 until user decides to log out.
 
 
-### Appliction Structure
+## Appliction Structure
 
 The appliction is built of two REST APIs developed in Python Flask for backend and React.js for frontend.
 
