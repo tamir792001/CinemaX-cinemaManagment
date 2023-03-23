@@ -34,6 +34,7 @@ class SubscriptionsWS_BL:
 #movies
 
     def get_all_movies(self):
+        print(os.environ)
         resp = requests.get(self.__url_movies)
         return resp
 
