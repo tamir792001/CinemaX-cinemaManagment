@@ -18,16 +18,20 @@ class JSONEncoder(json.JSONEncoder):
 
 load_dotenv()
 
-app = Flask(__name__)
-app.json_encoder = JSONEncoder
-app.url_map.strict_slashes = False
-CORS(app)
-app.register_blueprint(members_bp, url_prefix="/members")
-app.register_blueprint(movies_bp, url_prefix="/movies")
-app.register_blueprint(subscriptions_bp, url_prefix="/subscriptions")
 
-if __name__ == "__main__":
-    if os.environ.get("MODE") == "dev":
-        app.run(debug=True, port=5001)
-    else:
-        serve(app, host='0.0.0.0', port=5001)
+
+# if __name__ == "__main__":
+#     if os.environ.get("MODE") == "dev":
+#         app.run(debug=True, port=5001)
+#     else:
+#         serve(app, host='0.0.0.0', port=5001)
+
+def create_app():
+    app = Flask(__name__)
+    app.json_encoder = JSONEncoder
+    app.url_map.strict_slashes = False
+    CORS(app)
+    app.register_blueprint(members_bp, url_prefix="/members")
+    app.register_blueprint(movies_bp, url_prefix="/movies")
+    app.register_blueprint(subscriptions_bp, url_prefix="/subscriptions")
+    return app
