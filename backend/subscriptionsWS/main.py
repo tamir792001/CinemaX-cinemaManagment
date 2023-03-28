@@ -25,6 +25,7 @@ load_dotenv()
 #         app.run(debug=True, port=5001)
 #     else:
 #         serve(app, host='0.0.0.0', port=5001)
+# waitress-serve --call 'main:create_app'
 
 def create_app():
     app = Flask(__name__)

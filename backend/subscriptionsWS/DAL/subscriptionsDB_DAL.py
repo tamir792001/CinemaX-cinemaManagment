@@ -36,8 +36,9 @@ class SubscriptionsDB_DAL:
                     "$project" : {"subscriptions.memberID" : 0, "subscriptions._id" : 0}
                 }
             ]))
-        except:
+        except Exception as e:
             print("Error Occured")
+            print(e)
             return {"error" : "Error occured in Get All Member", "code" : 500}
         else:
             return {"data" : all_members}
