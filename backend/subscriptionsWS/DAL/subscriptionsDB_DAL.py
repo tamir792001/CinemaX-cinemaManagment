@@ -12,7 +12,7 @@ else:
 
 class SubscriptionsDB_DAL:
     def __init__(self):
-        self.__client = client
+        self.__client = MongoClient("mongodb+srv://tamir792001:JbiE0T2AzP9vYksg@cluster0.ogkh9vs.mongodb.net/?retryWrites=true&w=majority")
         self.__db = self.__client["subscriptionsDB"]
         self.__members_collection = self.__db["members"]
         self.__movies_collection = self.__db["movies"]
