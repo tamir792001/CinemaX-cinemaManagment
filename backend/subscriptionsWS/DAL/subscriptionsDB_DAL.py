@@ -1,10 +1,18 @@
 from pymongo import MongoClient
-import bson
-#from bson import ObjectId
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+if os.environ.get("MODE") == "dev":
+    client = MongoClient(port=int(os.environ.get("LOCAL_DB_PORT")))
+else:
+    client = MongoClient(os.environ.get("GLOBAL_DB_PORT"))
+
 
 class SubscriptionsDB_DAL:
     def __init__(self):
-        self.__client = MongoClient(port=27017)
+        self.__client = client
         self.__db = self.__client["subscriptionsDB"]
         self.__members_collection = self.__db["members"]
         self.__movies_collection = self.__db["movies"]
