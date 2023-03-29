@@ -1,8 +1,14 @@
 from pymongo import MongoClient
+import os
+
+if os.environ.get("MODE") == "dev":
+    client = MongoClient(port=int(os.environ.get("LOCAL_DB_PORT")))
+else:
+    client = MongoClient(os.environ.get("GLOBAL_DB_SRC"))
 
 class UsersDB_DAL:
     def __init__(self):
-        self.__client = MongoClient(port=27017)
+        self.__client = client
         self.__db = self.__client["usersDB"]
         self.__users_collection = self.__db["users"]
 

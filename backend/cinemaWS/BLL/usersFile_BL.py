@@ -55,7 +55,6 @@ class UsersFile_BL:
                 if all_users[i]["userID"] == id:
                     all_users.pop(i)
                     break
-            print(all_users)
             deletion_resp = self.__users_file_dal.write_users_file({"usersGeneralData" : all_users})
             return deletion_resp
         return resp

@@ -6,6 +6,7 @@ from Routers.auth_router import auth_bp
 import json
 from bson import ObjectId
 from datetime import datetime
+import os
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -25,4 +26,9 @@ app.register_blueprint(users_bp, url_prefix="/users")
 app.register_blueprint(subscriptions_ws_bp, url_prefix="/subscriptions")
 app.register_blueprint(auth_bp, url_prefix="/auth")
 
-app.run(debug=True)
+
+if __name__ == "__main__":
+    if os.environ.get("MODE") == "dev":
+        app.run(debug=True, port=5000)
+
+    
