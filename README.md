@@ -27,3 +27,13 @@ Each server is built code layers such as: data, business and routing.
 client-side:
 React.js application integrated with Redux and Matirial-UI for design.
 Uses react-router-dom for routing.
+
+## A Taste of how it looks
+### The Home Page
+![cinemax Home Page](images/CinemaxHomePage.png)
+
+### Movies Page
+![Movies Page](images/MoviesPage.png)
+
+### Members Page
+![Members Page](images/MembersPage.png)
