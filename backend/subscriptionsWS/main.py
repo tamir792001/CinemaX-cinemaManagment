@@ -28,11 +28,4 @@ app.register_blueprint(subscriptions_bp, url_prefix="/subscriptions")
 
 if __name__ == "__main__":
     if os.environ.get("MODE") == "dev":
-        app.run(debug=True, port=5001)
-
-        
-#     else:
-#         serve(app, host='0.0.0.0', port=5001)
-# waitress-serve --call 'main:create_app'
-
-    
+        app.run(debug=True, port=5001)    
