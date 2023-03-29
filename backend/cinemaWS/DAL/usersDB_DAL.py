@@ -24,8 +24,10 @@ class UsersDB_DAL:
     def get_user_doc(self, id):
         try:
             user = self.__users_collection.find_one({"_id" : id})
-        except:
+        except Exception as e:
+            print(e)
             print("Error Occured")
+            print(client)
             return {"error" : "Error occured in Get User Doc in DB", "code" : 500}
         else:
             print(user)
