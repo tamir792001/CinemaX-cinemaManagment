@@ -1,12 +1,15 @@
 import requests
 from datetime import datetime
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class SubscriptionsWS_BL:
     def __init__(self):
-        self.__url_members = os.environ.get("MEMBERS_ENDPOINT")
-        self.__url_movies =  os.environ.get("MOVIES_ENDPOINT") 
-        self.__url_subs =  os.environ.get("SUBSCRIPTIONS_ENDPOINT") 
+        self.__url_members = os.environ.get("DEV_MEMBERS_ENDPOINT") or os.environ.get("PROD_MEMBERS_ENDPOINT")
+        self.__url_movies =  os.environ.get("DEV_MOVIES_ENDPOINT") or os.environ.get("PROD_MOVIES_ENDPOINT")
+        self.__url_subs =  os.environ.get("DEV_SUBSCRIPTIONS_ENDPOINT") or os.environ.get("PROD_SUBSCRIPTIONS_ENDPOINT")
 
 #members
 
