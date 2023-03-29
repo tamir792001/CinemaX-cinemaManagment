@@ -1,5 +1,8 @@
 from pymongo import MongoClient
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 if os.environ.get("MODE") == "dev":
     client = MongoClient(port=int(os.environ.get("LOCAL_DB_PORT")))
