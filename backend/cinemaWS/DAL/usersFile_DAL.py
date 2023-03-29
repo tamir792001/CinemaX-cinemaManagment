@@ -10,7 +10,9 @@ class Users_File_DAL:
         try:
             with open(self.__path, "r") as f:
                 data = json.load(f)
-        except:
+        except Exception as e:
+            print(self.__path)
+            print(e)
             print("Error Occured")
             return {"error" : "Error occured in Read-File (of Users_File_DAl)", "code" : 500}
         else:
