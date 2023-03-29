@@ -7,14 +7,11 @@ load_dotenv()
 if os.environ.get("MODE") == "dev":
     client = MongoClient(port=int(os.environ.get("LOCAL_DB_PORT")))
 else:
-    client = MongoClient(os.environ.get("GLOBAL_DB_PORT"))
-
+    client = MongoClient(os.environ.get("GLOBAL_DB_SRC"))
 
 class SubscriptionsDB_DAL:
     def __init__(self):
         self.__client = client
-        print(os.environ.get("GLOBAL_DB_PORT"))
-        print(os.getenv("GLOBAL_DB_PORT"))
         self.__db = self.__client["subscriptionsDB"]
         self.__members_collection = self.__db["members"]
         self.__movies_collection = self.__db["movies"]
