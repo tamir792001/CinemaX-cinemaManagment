@@ -28,8 +28,10 @@ app.register_blueprint(subscriptions_ws_bp, url_prefix="/subscriptions")
 app.register_blueprint(auth_bp, url_prefix="/auth")
 
 
-if __name__ == "__main__":
-    if os.environ.get("MODE") == "dev":
-        app.run()
-    else:
-        serve(app, host='0.0.0.0', port=5001, url_scheme='https')
+# if __name__ == "__main__":
+#     if os.environ.get("MODE") == "dev":
+#         app.run()
+#     else:
+#         serve(app, host='0.0.0.0', port=5001, url_scheme='https')
+
+    
