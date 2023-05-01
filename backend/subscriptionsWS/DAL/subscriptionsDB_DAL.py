@@ -12,6 +12,7 @@ else:
 class SubscriptionsDB_DAL:
     def __init__(self):
         self.__client = client
+        print(self.__client)
         self.__db = self.__client["subscriptionsDB"]
         self.__members_collection = self.__db["members"]
         self.__movies_collection = self.__db["movies"]
