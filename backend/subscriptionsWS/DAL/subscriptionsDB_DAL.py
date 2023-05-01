@@ -1,8 +1,12 @@
 from pymongo import MongoClient
 import os
-from dotenv import load_dotenv
+from dotenv import load_dotenv, dotenv_values
 
-load_dotenv("../.env")
+load_dotenv()
+config= dotenv_values(".env")
+print("000000000000000000000000000000000000000000")
+print(config)
+
 
 if os.environ.get("MODE") == "dev":
     print("dev")
