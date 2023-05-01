@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv, dotenv_values
 
 load_dotenv()
-config= dotenv_values(".env")
+config= dict(dotenv_values(".env"))
 print("000000000000000000000000000000000000000000")
 print(config)
 
