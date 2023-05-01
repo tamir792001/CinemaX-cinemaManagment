@@ -9,6 +9,7 @@ if os.environ.get("MODE") == "dev":
     client = MongoClient(port=int(os.environ.get("LOCAL_DB_PORT")))
 else:
     print("prod")
+    print(os.environ.get("GLOBAL_DB_SRC"))
     client = MongoClient(os.environ.get("GLOBAL_DB_SRC"))
 
 class SubscriptionsDB_DAL:
