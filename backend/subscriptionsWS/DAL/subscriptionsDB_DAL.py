@@ -10,6 +10,7 @@ if os.environ.get("MODE") == "dev":
 else:
     print("prod")
     print(os.environ.get("GLOBAL_DB_SRC"))
+    print(os.environ)
     client = MongoClient(os.environ.get("GLOBAL_DB_SRC"))
 
 class SubscriptionsDB_DAL:
