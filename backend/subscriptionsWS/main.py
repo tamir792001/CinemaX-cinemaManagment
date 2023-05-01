@@ -8,7 +8,6 @@ from Routers.movies_router import movies_bp
 from Routers.subscriptions_router import subscriptions_bp
 from dotenv import load_dotenv
 import os
-from waitress import serve
 
 class JSONEncoder(json.JSONEncoder):
     def default(self, obj) :
