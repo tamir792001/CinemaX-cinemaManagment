@@ -5,8 +5,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 if os.environ.get("MODE") == "dev":
+    print("dev")
     client = MongoClient(port=int(os.environ.get("LOCAL_DB_PORT")))
 else:
+    print("prod")
     client = MongoClient(os.environ.get("GLOBAL_DB_SRC"))
 
 class SubscriptionsDB_DAL:
