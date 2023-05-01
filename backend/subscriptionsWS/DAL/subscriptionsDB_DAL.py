@@ -5,7 +5,8 @@ from dotenv import load_dotenv, dotenv_values
 load_dotenv()
 config= dict(dotenv_values(".env"))
 print("000000000000000000000000000000000000000000")
-print(config)
+print(__path__)
+print(__file__)
 
 
 if os.environ.get("MODE") == "dev":
