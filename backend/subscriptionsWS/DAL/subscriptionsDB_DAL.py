@@ -2,11 +2,11 @@ from pymongo import MongoClient
 import os
 from dotenv import load_dotenv, dotenv_values
 
-load_dotenv(os.path.dirname(os.path.dirname(__file__)))
+load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), ".env"))
 config= dict(dotenv_values(".env"))
 print("000000000000000000000000000000000000000000")
 print(__file__)
-print(os.path.dirname(os.path.dirname(__file__)))
+print(os.path.join(os.path.dirname(os.path.dirname(__file__)), ".env"))
 
 
 if os.environ.get("MODE") == "dev":
